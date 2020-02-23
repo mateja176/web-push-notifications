@@ -5,6 +5,6 @@ self.addEventListener('push', e => {
 
   self.registration.showNotification(data.title, {
     body: 'Notified by Mateja',
-    icon: 'https://i.imgur.com/G3CgjIK.png',
+    icon: 'https://i.imgur.com/ul6twSo.png',
   });
 });
