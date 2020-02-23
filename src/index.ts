@@ -1,5 +1,6 @@
 import * as express from 'express';
 import * as statusCodes from 'http-status-codes';
+import { join } from 'path';
 import * as webPush from 'web-push';
 
 const publicVapidKey = process.env.PUBLIC_VAPID_KEY;
@@ -17,9 +18,9 @@ webPush.setVapidDetails(
 
 const app = express();
 
-app.use(express.json());
+app.use(express.static(join(__dirname, 'client')));
 
-app.get('/', (req, res) => res.json({ hello: 'world' }));
+app.use(express.json());
 
 app.post('/subscribe', (req, res) => {
   const { body: subscription } = req;
