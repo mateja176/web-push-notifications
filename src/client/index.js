@@ -34,9 +34,7 @@ const send = () =>
         headers: {
           'content-type': 'application/json',
         },
-        body: JSON.stringify({
-          subscription,
-        }),
+        body: JSON.stringify(subscription),
       }),
     );
 
