@@ -1,11 +1,9 @@
 import * as express from 'express';
 
-const publicVapidKey =
-  'BKdLrLW2cNG_4_YRGuU-P3DR_hMnYfms1EegXnz5nEhGsC41WryTIxmU0Geix5KNSD05RzpXRRE5JCSnxgsyUMc';
-
+const publicVapidKey = process.env.PUBLIC_VAPID_KEY;
 const privateVapidKey = process.env.PRIVATE_VAPID_KEY;
 
-if (!privateVapidKey) {
+if (!publicVapidKey || !privateVapidKey) {
   throw new Error('Private VAPID key not supplied');
 }
 
